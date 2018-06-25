@@ -5,7 +5,7 @@ import asyncio
 
 bot = commands.Bot(command_prefix="$")
 token = "PUT YOUR BOT TOKEN HERE"
-chatFilter = ["fuck", "bitch", "nigga", "nigger"]
+chatFilter = ["enter","swearwords","here","in","lowercase"]
 
 @bot.event
 #When the bot is ready to go
@@ -29,10 +29,10 @@ async def on_message(message):
             except discord.errors.NotFound:
                 return
     #Cookie
-    if message.content.lower().startswith("!cookie"):
+    if message.content.lower().startswith("$cookie"):
         await bot.send_message(message.channel, ":cookie:")
     #Say stuff
-    if message.content.lower().startswith("!say"):
+    if message.content.lower().startswith("$say"):
         args = message.content.split(" ")
         await bot.send_message(message.channel, " ".join(args[1:]))
 
